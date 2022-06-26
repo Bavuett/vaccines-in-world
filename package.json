@@ -4,7 +4,7 @@
   "description": "world-vaccine-bot (@WorldCOVIDVax) is a Twitter bot which tweets how many people are currently vaccinated in the world per 100 people. Powered by owid/covid-19-data.",
   "main": "build/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "mocha --require ts-node/register ./tests/**/*.test.ts",
     "build": "npx tsc",
     "start": "node build/app.js",
     "dev": "npx ts-node app/app.ts"
@@ -25,12 +25,16 @@
   },
   "homepage": "https://github.com/DevLBD/world-vaccine#readme",
   "dependencies": {
-    "node-fetch": "^3.2.6",
+    "node-fetch": "^2.6.7",
     "twitter-api-v2": "^1.12.2",
     "typescript": "^4.7.4"
   },
   "devDependencies": {
+    "@types/jest": "^28.1.3",
+    "@types/node-fetch": "^2.6.2",
     "dotenv": "^16.0.1",
+    "jest": "^28.1.1",
+    "ts-jest": "^28.0.5",
     "ts-node": "^10.8.1"
   }
 }

@@ -16213,7 +16213,7 @@ export interface ZWE {
     excess_mortality_cumulative_per_million?: any;
 }
 
-export interface RootObject {
+export interface WorldData {
     AFG: AFG;
     OWID_AFR: OWIDAFR;
     ALB: ALB;

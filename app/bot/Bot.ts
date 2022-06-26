@@ -1,10 +1,9 @@
 import Twitter from "twitter-api-v2";
-import DataStream from "../datastream/DataStream";
-import { ITA, RootObject } from "../interfaces/Interfaces";
+import getWorldData from "./functions/getWorldData";
+import { WorldData } from "../interfaces/Interfaces";
 
 export default class Bot {
     twitter: Twitter;
-    dataStream: DataStream;
 
     constructor(appKey: string, appSecret: string, accessToken: string, accessSecret: string) {
         this.twitter = new Twitter({
@@ -13,22 +12,16 @@ export default class Bot {
             accessToken,
             accessSecret
         });
-
-        this.dataStream = new DataStream();
     }
 
     async run(): Promise<void> {
-        console.log("Bot started. \n");
+        console.log("Bot started.\n");
         
-        var vaccinations: RootObject = await this.dataStream.getVaccines();
+        const worldData: WorldData = await getWorldData();
 
-        try {
-            console.log(vaccinations.ITA.location);
-        } catch(error) {
-            console.log("Had trouble loading data.");
-        }
+        console.log(worldData.ITA.location);
 
-        console.log("Bot stopped.");
+        console.log("\nBot stopped.");
     }
 
     async tweet(content: string): Promise<void> {
