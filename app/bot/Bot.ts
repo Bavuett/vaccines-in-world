@@ -1,5 +1,6 @@
 import Twitter from "twitter-api-v2";
-import getWorldData from "./functions/getWorldData";
+import getWorldData from "./getWorldData";
+
 import { WorldData } from "../interfaces/Interfaces";
 
 export default class Bot {
