@@ -1,9 +1,9 @@
 import Twitter from "twitter-api-v2";
 import getWorldData from "./getWorldData";
 
-import { WorldData } from "../interfaces/Interfaces";
+import { WorldData } from "./interfaces/Interfaces";
 
-export default class Bot {
+class Bot {
     twitter: Twitter;
 
     constructor(appKey: string, appSecret: string, accessToken: string, accessSecret: string) {
@@ -31,3 +31,5 @@ export default class Bot {
         console.log("Tweeted: '" + content + "'\n");
     }
 }
+
+export default Bot;

@@ -5,4 +5,4 @@
 node_modules 
 
 # Files that don't need to be part of the repo.
-build/*.js
+build/**/*.js
