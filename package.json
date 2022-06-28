@@ -1,13 +1,14 @@
 {
   "name": "world-vaccine",
-  "version": "1.0.0",
-  "description": "world-vaccine-bot (@WorldCOVIDVax) is a Twitter bot which tweets how many people are currently vaccinated in the world per 100 people. Powered by owid/covid-19-data.",
+  "version": "0.1.0",
+  "description": "world-vaccine-bot (@VaccinesInWorld) is a Twitter bot which tweets how many people are currently vaccinated in the world per 100 people. Powered by owid/covid-19-data.",
   "main": "build/app.js",
   "scripts": {
-    "test": "mocha --require ts-node/register ./tests/**/*.test.ts",
+    "test": "jest",
     "build": "npx tsc",
     "start": "node build/app.js",
-    "dev": "npx ts-node app/app.ts"
+    "dev": "npx ts-node app/app.ts",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
