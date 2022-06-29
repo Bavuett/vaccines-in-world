@@ -1,7 +1,4 @@
 import Twitter from "twitter-api-v2";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 test("Can login to Twitter and make a request.", async () => {
     const appKey: string = process.env.API_KEY ?? "";
