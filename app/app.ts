@@ -14,6 +14,6 @@ try {
 
     const bot = new Bot(appKey, appSecret, accessToken, accessSecret);
     bot.run();
-} catch (error) {
-    throw error;
+} catch (exception) {
+    throw exception;
 }

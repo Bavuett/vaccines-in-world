@@ -9,7 +9,7 @@ test("Can login to Twitter and make a request.", async () => {
     const accessToken: string = process.env.ACCESS_TOKEN ?? "";
     const accessSecret: string = process.env.ACCESS_SECRET ?? "";
 
-    const twitter = new Twitter({
+    const twitter: Twitter = new Twitter({
         appKey,
         appSecret,
         accessToken,
