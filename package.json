@@ -1,18 +1,17 @@
 {
-  "name": "world-vaccine",
-  "version": "0.1.0",
-  "description": "world-vaccine-bot (@VaccinesInWorld) is a Twitter bot which tweets how many people are currently vaccinated in the world per 100 people. Powered by owid/covid-19-data.",
+  "name": "vaccines-in-world",
+  "version": "1.0.0",
+  "description": "vaccines-in-world (@VaccinesInWorld) is a Twitter bot which tweets how many people are currently vaccinated in the world per 100 people. Powered by owid/covid-19-data.",
   "main": "build/app.js",
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
     "start": "node build/app.js",
-    "dev": "npx ts-node app/app.ts",
-    "postinstall": "npm run build"
+    "dev": "npx ts-node app/app.ts"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DevLBD/world-vaccine.git"
+    "url": "git+https://github.com/DevLBD/vaccines-in-world.git"
   },
   "keywords": [
     "Vaccine",
@@ -22,9 +21,9 @@
   "author": "Lorenzo Barretta",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/DevLBD/world-vaccine/issues"
+    "url": "https://github.com/DevLBD/vaccines-in-world/issues"
   },
-  "homepage": "https://github.com/DevLBD/world-vaccine#readme",
+  "homepage": "https://github.com/DevLBD/vaccines-in-world#readme",
   "dependencies": {
     "node-fetch": "^2.6.7",
     "twitter-api-v2": "^1.12.2",

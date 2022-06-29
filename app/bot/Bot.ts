@@ -1,8 +1,7 @@
 import Twitter from "twitter-api-v2";
-
 import getWorldData from "./getWorldData";
 import buildTweet from "./buildTweet";
-
+import logError from "./logError";
 import { WorldData } from "./interfaces/WorldData";
 
 class Bot {
@@ -19,27 +18,26 @@ class Bot {
 
     async run(): Promise<void> {
         console.log("Bot started.\n");
-        
+
+        // The bot runs once a day.
         setInterval(async () => {
-            const worldData: WorldData = await getWorldData();
-            const status = await buildTweet(worldData);
+            // Fetches the JSON from the internet.
+            // If the fetch succeeds, create the string to tweet and proceed to tweet it.
+            await getWorldData().then(async (worldData: WorldData) => {
+                    const status = await buildTweet(worldData);
 
-            console.log("Tweeting...");
-            
-            await this.tweet(status);
+                    return status;
+                }).then(async (status: string) => {
+                    console.log("Tweeting...");
 
-        }, 86400000);
+                    await this.twitter.v1.tweet(status);
+                }).then(() => {
+                    console.log("Tweeted! Will tweet once again in a day. \n");
+                }).catch((exception) => {
+                    logError(exception);
+                });
+        }, 864e5);
 
-    }
-
-    async tweet(content: string): Promise<void> {
-        this.twitter.v1.tweet(content)
-            .then(() => {
-                console.log("\nTweeted! Will tweet again tomorrow. \n")
-            }) 
-            .catch((exception) => {
-                console.log("\nWhoops! Couldn't tweet. \nHere's what happened. " + exception + "\n");
-            });
     }
 }
 

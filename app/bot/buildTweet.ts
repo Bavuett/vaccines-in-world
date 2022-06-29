@@ -7,24 +7,38 @@ async function buildTweet(worldData: WorldData): Promise<string> {
     const month = ("0" + (date.getUTCMonth() + 1)).slice(-2);
     const year = date.getUTCFullYear();
 
-    const vaccinationsHundredUSA: number = worldData.USA.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredUS: number = worldData.USA.people_fully_vaccinated_per_hundred;
     const vaccinationsHundredUK: number = worldData.GBR.people_fully_vaccinated_per_hundred;
     const vaccinationsHundredIT: number = worldData.ITA.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredDE: number = worldData.DEU.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredFR: number = worldData.FRA.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredES: number = worldData.ESP.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredTU: number = worldData.TUR.people_fully_vaccinated_per_hundred;
     const vaccinationsHundredCH: number = worldData.CHN.people_fully_vaccinated_per_hundred;
-    const vacciantionsHundredJP: number = worldData.JPN.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredJP: number = worldData.JPN.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredIN: number = worldData.IND.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredBR: number = worldData.BRA.people_fully_vaccinated_per_hundred;
+    const vaccinationsHundredSA: number = worldData.ZAF.people_fully_vaccinated_per_hundred;
 
-    // I preffered to do multiline strings this way because I am able
+    // I preferred to do multiline strings this way because I am able
     // to make the code look better without wasting characters in the tweets.
     const status: string = [
-        "World Vaccinations on " + day + "." + month + "." + year + ".", 
+        "World Vaccines. " + day + "/" + month + "/" + year + ".", 
         "", 
-        "- USA: " + vaccinationsHundredUSA + "%",
+        "- USA: " + vaccinationsHundredUS + "%",
         "- UK: " + vaccinationsHundredUK + "%",
         "- Italy: " + vaccinationsHundredIT + "%",
+        "- Germany: " + vaccinationsHundredDE + "%",
+        "- France: " + vaccinationsHundredFR + "%",
+        "- Spain: " + vaccinationsHundredES + "%",
+        "- Turkey: " + vaccinationsHundredTU + "%",
         "- China: " + vaccinationsHundredCH + "%",
-        "- Japan: " + vacciantionsHundredJP + "%",
+        "- Japan: " + vaccinationsHundredJP + "%",
+        "- India: " + vaccinationsHundredIN + "%",
+        "- Brazil: " + vaccinationsHundredBR + "%",
+        "- S. Africa: " + vaccinationsHundredSA + "%",
         "",
-        "#COVID19 #COVIDvaccine"
+        "#COVID19 #COVID"
     ].join("\n");
     
     return status;
