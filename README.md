@@ -1,6 +1,7 @@
 <div align="center">
  
  [![Node.js CI status](https://github.com/DevLBD/vaccines-in-world/actions/workflows/node.js.yml/badge.svg)](https://github.com/DevLBD/vaccines-in-world/actions/workflows/node.js.yml)
+ [![CodeQL analysis status](https://github.com/DevLBD/vaccines-in-world/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/DevLBD/vaccines-in-world/actions/workflows/codeql-analysis.yml)
  [![Follow @VaccinesInWorld on Twitter](https://img.shields.io/twitter/follow/VaccinesInWorld?style=social)](https://twitter.com/VaccinesInWorld)
  
 </div>
